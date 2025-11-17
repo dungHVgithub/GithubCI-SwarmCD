@@ -1,6 +1,6 @@
 import axios from "axios";
 import cookie from "react-cookies";
-const BASE_URL = 'http://localhost:8080/javaSpring/api/';
+const BASE_URL = 'https://ssbe.hoangvandung.click';
 
 export const endpoints = {
     'users': '/users',

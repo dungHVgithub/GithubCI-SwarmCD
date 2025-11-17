@@ -56,8 +56,7 @@ public class SpringSecurityConfig {
                 .csrf(c -> c.disable())
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/login").permitAll() // cho phép trang login, static
-                        .requestMatchers("/javaSpring").hasRole("ADMIN")// chỉ ADMIN mới vào được trang "/"
-                        .requestMatchers("/").hasRole("ADMIN")
+                        .requestMatchers("/").permitAll()
                         .requestMatchers( "/api/google-login", "/api/login").permitAll()
                         .requestMatchers("/api/auth/forgot-password").permitAll()
                         .requestMatchers( "/api/auth/reset-password").permitAll()
@@ -74,7 +73,7 @@ public class SpringSecurityConfig {
                                 request.getSession().invalidate();
                                 response.sendRedirect("/login?not_admin=true");
                             } else {
-                                response.sendRedirect("/javaSpring");
+                                response.sendRedirect("/");
                             }
                         })
                         .failureUrl("/login?error=true")
@@ -107,7 +106,11 @@ public class SpringSecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000"));
+        config.setAllowedOrigins(List.of(
+        "http://localhost:3000",
+        "https://ssfe.duckdns.org",
+        "https://studysmartbe.duckdns.org" 
+        ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS","PATCH"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setExposedHeaders(List.of("Authorization"));

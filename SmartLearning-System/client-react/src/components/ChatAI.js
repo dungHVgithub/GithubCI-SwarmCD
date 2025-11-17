@@ -4,7 +4,7 @@ import { SidebarContext } from "../reducers/SidebarContext";
 import botAvatar from "../asset/img/avatarChat.jpg";
 import "../static/chatAI.css";
 
-const API_BASE = process.env.REACT_APP_AI_BASE_URL || "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_AI_BASE_URL || "https://ssai.hoangvandung.click";
 const LS_KEY = "chatai_uploaded_files";
 
 export default function ChatAI() {

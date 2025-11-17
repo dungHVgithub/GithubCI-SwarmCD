@@ -3,7 +3,7 @@ import { MyUserContext } from "../reducers/MyUserReducer";
 import botAvatar from "../asset/img/avatarChat.jpg";
 import "../static/chatbotAI.css";
 
-const API_BASE = process.env.REACT_APP_AI_BASE_URL || "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_AI_BASE_URL || "https://ssai.hoangvandung.click";
 
 export default function ChatbotAI() {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
