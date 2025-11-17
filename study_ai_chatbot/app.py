@@ -18,11 +18,17 @@ EMB_MODEL = os.getenv("EMB_MODEL", "text-embedding-3-small")
 app = Flask(__name__)
 CORS(
     app,
-    resources={
-        r"/query": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]},
-        r"/upsert": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]},
-        r"/health": {"origins": ["*"]},
+    resources = {
+    r"/query": {
+        "origins": ["https://ssfe.hoangvandung.click"]
     },
+    r"/upsert": {
+        "origins": ["https://ssfe.hoangvandung.click"]
+    },
+    r"/health": {
+        "origins": ["*"]
+    },
+}
     supports_credentials=False,  # để True nếu thực sự dùng cookie
     allow_headers=["Content-Type", "Authorization"],
     methods=["GET", "POST", "OPTIONS"],
