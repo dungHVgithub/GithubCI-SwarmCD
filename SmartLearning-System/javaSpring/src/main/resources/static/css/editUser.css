@@ -1,0 +1,44 @@
+.edit-user-form {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    background: #fff; /* màu trắng này sẽ bị class .bg-form ghi đè */
+    border-radius: 20px;
+    box-shadow: 0 6px 36px 0 rgba(85, 98, 114, 0.12);
+    padding: 2.8rem 2.5rem 2.2rem 2.5rem;
+    z-index: 0;
+}
+
+.bg-form {
+    background: #f6f9ff !important;    /* Chọn màu xanh nhạt tinh tế, dễ nhìn. Có thể thay mã màu khác nếu bạn muốn tone khác: #f8f9fa (xám), #f4fafe (xanh nhạt), ... */
+    border: 1.5px solid #dde6f5;
+}
+
+.title-adduser {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    color: #1976d2 !important; /* Xanh đậm, nổi bật */
+    text-shadow: 0 2px 8px rgba(25,118,210,0.07);
+}
+
+@media (max-width: 1200px) {
+    .edit-user-form { max-width: 98px; padding: 2rem 0.5rem; }
+}
+@media (max-width: 900px) {
+    .edit-user-form { max-width: 100px; padding: 1rem 0.2rem;}
+}
+.avatar-preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-preview-circle {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #dde6f5;
+    background: #f4f6fb;
+    box-shadow: 0 2px 12px rgba(67, 89, 130, 0.07);
+}
+

@@ -1,0 +1,19 @@
+select[multiple] {
+    min-height: 120px;
+    font-size: 1.08rem;
+}
+.avatar-preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-preview-rectangle {
+    width: 240px;          /* Bạn có thể chỉnh lại width cho cân đối chữ nhật */
+    height: 200px;         /* Chiều cao nhỏ hơn để tạo cảm giác chữ nhật */
+    object-fit: cover;
+    border-radius: 16px;   /* Bo góc nhẹ, không phải tròn hoàn toàn */
+    border: 3px solid #dde6f5;
+    background: #f4f6fb;
+    box-shadow: 0 2px 12px rgba(67, 89, 130, 0.07);
+}
+

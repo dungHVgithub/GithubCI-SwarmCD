@@ -1,0 +1,231 @@
+/* Modal styles */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal-content {
+    background: #fff;
+    padding: 40px 32px 32px 32px;
+    border-radius: 16px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16);
+    position: relative;
+    min-width: 340px;
+    max-width: 90vw;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Login form styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 28px;
+    text-align: center;
+    color: #176b87;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-input {
+    width: 100%;
+    border: 1.5px solid #dde5ed;
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f7fbff;
+    color: #222;
+    box-sizing: border-box;
+    margin-top: 2px;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+}
+
+.login-input:focus {
+    border: 1.5px solid #176b87;
+    box-shadow: 0 0 0 2px #b3e0ff;
+    background: #fff;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.login-btn {
+    background: #176b87;
+    color: #fff;
+    width: 150%;
+    padding: 11px 0;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #1296db;
+}
+
+.login-error {
+    color: #d32f2f;
+    /* đỏ đậm */
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.login-success {
+    color: #1b5e20;
+    /* xanh lá đậm */
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.login-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+
+}
+
+#google-signin-btn.google-signin-btn {
+    margin-left: 40px;
+    margin-top: 10px;
+    display: inline-block;
+    /* nếu cần canh hàng */
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+    /* chừa chỗ cho icon bên trong */
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.forget-pass {
+    margin-top: 6px;
+    color: #0d6efd;
+    cursor: pointer;
+    font-size: 0.95rem;
+    user-select: none;
+    display: inline-block;
+}
+
+.forget-pass:hover {
+    color: #e7443b;
+    /* xanh đậm hơn khi hover */
+    text-decoration: underline;
+}
+
+.email-otp-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+    /* 👉 tăng khoảng cách giữa input và nút */
+    margin-bottom: 1rem;
+}
+
+.email-col {
+    flex: 4 !important;
+    /* 👉 input chiếm rộng hơn */
+    display: flex;
+    flex-direction: column;
+}
+
+.email-otp-input {
+    width: 120%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.btn-send-otp {
+    flex: 1;
+    /* 👉 nút nhỏ hơn input */
+    padding: 8px 14px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.btn-send-otp:hover:enabled {
+    background-color: #084298;
+}
+
+.btn-send-otp:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.forgot-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+}

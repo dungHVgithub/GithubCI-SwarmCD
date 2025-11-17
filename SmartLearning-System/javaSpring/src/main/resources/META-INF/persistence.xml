@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit">
+    <class>com.job.pojo.Employer</class>
+    <class>com.job.pojo.CompanyImages</class>
+    <class>com.job.pojo.HosoUngtuyen</class>
+    <class>com.job.pojo.Employee</class>
+    <class>com.job.pojo.CompanyInformation</class>
+    <class>com.job.pojo.Admin</class>
+    <class>com.job.pojo.Category</class>
+    <class>com.job.pojo.JobDescription</class>
+    <class>com.job.pojo.User</class>
+    <class>com.job.pojo.UserDocuments</class>
+    <class>com.job.pojo.UserNotification</class>
+    <class>com.job.pojo.FollowNotice</class>
+    <class>com.job.pojo.Notification</class>
+    <class>com.job.pojo.JobPosting</class>
+    <class>com.job.pojo.EmployeeJob</class>
+    <class>com.smartStudy.pojo.ChapterProgress</class>
+    <class>com.smartStudy.pojo.ExerciseSubmissions</class>
+    <class>com.smartStudy.pojo.Chapters</class>
+    <class>com.smartStudy.pojo.ExerciseAnswers</class>
+    <class>com.smartStudy.pojo.Notes</class>
+    <class>com.smartStudy.pojo.ChapterAttachments</class>
+    <class>com.smartStudy.pojo.Users</class>
+    <class>com.smartStudy.pojo.ExerciseQuestions</class>
+    <class>com.smartStudy.pojo.McqResponses</class>
+    <class>com.smartStudy.pojo.Subjects</class>
+    <class>com.smartStudy.pojo.Exercises</class>
+    <class>com.smartStudy.pojo.Students</class>
+    <class>com.smartStudy.pojo.Teachers</class>
+    <class>com.smartStudy.pojo.ChapterAttachment</class>
+    <class>com.smartStudy.pojo.Teacher</class>
+    <class>com.smartStudy.pojo.McqResponse</class>
+    <class>com.smartStudy.pojo.Subject</class>
+    <class>com.smartStudy.pojo.Exercise</class>
+    <class>com.smartStudy.pojo.ExerciseAnswer</class>
+    <class>com.smartStudy.pojo.Chapter</class>
+    <class>com.smartStudy.pojo.User</class>
+    <class>com.smartStudy.pojo.ExerciseSubmission</class>
+    <class>com.smartStudy.pojo.Student</class>
+    <class>com.smartStudy.pojo.ExerciseQuestion</class>
+    <class>com.smartStudy.pojo.Note</class>
+    <class>com.smartStudy.pojo.Class</class>
+    <class>com.smartStudy.pojo.EssayResponse</class>
+    <class>com.smartStudy.pojo.TeacherAssignment</class>
+    <class>com.smartStudy.pojo.Notification</class>
+    <class>com.smartStudy.pojo.StudentClass</class>
+    <class>com.smartStudy.pojo.TeacherClass</class>
+    <class>com.smartStudy.pojo.StudentSchedule</class>
+  </persistence-unit>
+</persistence>

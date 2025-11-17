@@ -1,0 +1,76 @@
+.welcome-container {
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    /* adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #e0f3ff 0%, #b3e0ff 50%, #e5f9ff 100%);
+    overflow: hidden;
+    padding: 0;
+    margin-top: 70px;
+    margin-bottom: 35px;
+}
+
+.welcome-content {
+    display: flex;
+    width: 90vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 90px;
+}
+
+.welcome-left,
+.welcome-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-left {
+    gap: 32px;
+}
+
+.welcome-message {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #176b87;
+    text-align: center;
+}
+
+.explore-btn {
+    background: #176b87;
+    color: #fff;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.explore-btn:hover {
+    background: #1296db;
+}
+
+.welcome-right {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    display: block;
+}

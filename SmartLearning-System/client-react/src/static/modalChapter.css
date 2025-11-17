@@ -1,0 +1,137 @@
+/* static/modalChapter.css */
+
+.mc-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.mc-dialog {
+    width: min(640px, 92vw);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    animation: mc-pop .18s ease-out;
+}
+
+@keyframes mc-pop {
+    from {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.mc-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mc-close {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: #64748b;
+    border-radius: 8px;
+    padding: 4px 6px;
+}
+
+.mc-close:hover {
+    background: #e5e7eb;
+    color: #0f172a;
+}
+
+.mc-form {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mc-field label {
+    font-size: 13px;
+    color: #475569;
+}
+
+.mc-field input,
+.mc-field textarea {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+
+.mc-field input:focus,
+.mc-field textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.mc-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.mc-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.mc-btn {
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    font-weight: 600;
+}
+
+.mc-btn.primary {
+    background: #4f46e5;
+    border-color: #4f46e5;
+    color: #fff;
+}
+
+.mc-btn.primary:hover {
+    background: #4338ca;
+}
+
+.mc-btn.ghost:hover {
+    background: #f1f5f9;
+}

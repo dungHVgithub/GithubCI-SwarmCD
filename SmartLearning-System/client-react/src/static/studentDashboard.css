@@ -1,0 +1,100 @@
+.main-content {
+    /* rộng hơn Sidebar 1 chút cho chắc chắn */
+    margin-top: 60px;
+    padding-top: 40px;
+    margin-left: 80px;
+    min-height: 100vh;
+    transition: padding-left 0.2s;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-right: 40px;
+    gap: 16px;
+}
+
+.avatar-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-width: 1.5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #000;
+    /* Border màu đen */
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.welcome-text {
+    font-size: 1.15rem;
+    color: #333;
+}
+
+.subject-section {
+    margin-top: 24px;
+}
+
+.subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 16px;
+}
+
+.subject-card {
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(30, 55, 110, 0.08);
+    margin: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.2s;
+}
+
+.subject-card:hover {
+    box-shadow: 0 8px 32px rgba(30, 55, 110, 0.16);
+}
+
+.subject-card-imgbox {
+    background: linear-gradient(135deg, #0A52C3, #2A8FFF);
+    padding: 24px 0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subject-card-img-full {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.subject-card-body {
+    padding: 18px 22px 16px 22px;
+}
+
+.subject-card-title {
+    font-size: 1.22rem;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.subject-card-teacher {
+    font-size: 1rem;
+    color: #666;
+}

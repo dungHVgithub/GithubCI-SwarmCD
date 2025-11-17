@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.git
+.gitignore
+.idea
+dist/
+build/
+data/*          # data sẽ mount từ host, không copy vào image
+chroma/*        # vector store mount từ host

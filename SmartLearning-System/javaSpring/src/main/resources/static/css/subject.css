@@ -1,0 +1,71 @@
+.subjects-table {
+    background: none;
+    border-radius: 0;
+}
+.subjects-table th {
+    font-weight: 500;
+    color: #444;
+    background: #f7f7f7;
+    border: none;
+}
+.subjects-table td {
+    background: #f9f9f9;
+    border-top: 1px solid #f2f2f2;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+.btn-action {
+    margin-right: 5px;
+    font-size: 1.06rem;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 8px;
+}
+.btn-action:last-child { margin-right: 0; }
+.pagination .page-link {
+    color: #2376ea;
+    font-weight: 500;
+    border-radius: 8px !important;
+}
+.pagination .page-link:hover {
+    background: #eaefff;
+    color: #0056b3;
+}
+@media (max-width: 900px) {
+    .subjects-table td { font-size: .97rem;}
+}
+/* Modal phải dùng position: fixed trên viewport, bỏ padding-left của body */
+.modal {
+    padding-left: 0 !important;
+}
+.modal-dialog {
+    margin: 0 auto !important;
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        min-height: calc(100vh - 1rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.toast-success {
+    background: #43a047 !important;   /* Xanh lá đậm (Success) */
+    color: #fff !important;
+}
+.toast-fail {
+    background: #e53935 !important;   /* Đỏ nổi bật (Error) */
+    color: #fff !important;
+}
+.toast-success .toast-body,
+.toast-fail .toast-body {
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.toast-success .btn-close,
+.toast-fail .btn-close {
+    filter: brightness(200%);
+}
+

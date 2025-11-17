@@ -1,0 +1,152 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 28px;
+    text-align: center;
+    color: #176b87;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    gap: 18px;
+}
+
+.signup-row {
+    display: flex;
+    gap: 16px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.signup-input {
+    width: 100%;
+    border: 1.5px solid #dde5ed;
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    outline: none;
+    background: #f7fbff;
+    transition: border 0.2s, box-shadow 0.2s;
+    color: #222;
+    box-sizing: border-box;
+    margin-top: 2px;
+}
+
+.signup-input:focus {
+    border: 1.5px solid #176b87;
+    box-shadow: 0 0 0 2px #b3e0ff;
+    background: #fff;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Avatar preview tròn */
+.avatar-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #dde5ed;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22px;
+    background: #f7fbff;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e5e7eb;
+    border-radius: 50%;
+}
+
+.signup-btn {
+    background: #176b87;
+    color: #fff;
+    padding: 11px 0;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.signup-btn:hover {
+    background: #1296db;
+}
+
+.signup-success {
+    color: #27ae60;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.signup-error {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+    /* chừa chỗ cho icon bên trong */
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+    color: #333;
+}

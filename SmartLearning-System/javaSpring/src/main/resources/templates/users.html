@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Management</title>
+    <th:block th:replace="~{base :: bootstrap}"></th:block>
+    <link th:href="@{/css/user.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script th:src="@{/js/user.js}"></script>
+</head>
+<body id="body-pd">
+<div th:replace="~{base :: header}"></div>
+<main th:fragment="content" style="padding-top: 20px;">
+    <div class="container-fluid">
+        <div class="row mb-4 justify-content-center">
+            <div class="col-xl-10">
+                <form class="row gx-2 gy-2 align-items-center" method="get" action="#" autocomplete="off">
+                    <div class="col-md-5">
+                        <input class="form-control" type="search" name="email" placeholder="Search by email .."
+                               aria-label="Search">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" name="role">
+                            <option value="">Role</option>
+                            <option value="ADMIN">Admin</option>
+                            <option value="TEACHER">Teacher</option>
+                            <option value="STUDENT">Student</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-grid">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-search"></i> Search
+                        </button>
+                    </div>
+                    <div class="col-md-2 d-grid">
+                        <a th:href="@{/users/add}" class="btn btn-dark w-100">
+                            <i class="bi bi-plus-circle me-1"></i> Add user
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- User table -->
+        <div class="table-responsive">
+            <table class="table table-borderless align-middle users-table">
+                <thead>
+                <tr>
+                    <th>List</th>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Created_At</th>
+                    <th>Updated_At</th>
+                    <th style="width:140px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="u : ${users}">
+                    <td>
+                        <img th:if="${u.avatar != null and !#strings.isEmpty(u.avatar)}"
+                             th:src="@{${u.avatar}}" alt="avatar" class="avatar-img">
+                        <img th:unless="${u.avatar != null and !#strings.isEmpty(u.avatar)}"
+                             th:src="@{/images/userAvatar.png}" alt="avatar" class="avatar-img">
+                    </td>
+
+                    <td>
+                        <span class="user-name" th:text="${u.name}">User name</span><br>
+                        <span class="user-role" th:text="${u.role}">Role</span>
+                    </td>
+                    <td>
+                        <a th:href="'mailto:' + ${u.email}" class="user-email" th:text="${u.email}">user@email.com</a>
+                    </td>
+                    <td th:text="${#dates.format(u.createdAt, 'yyyy-MM-dd HH:mm')}">2024-01-01</td>
+                    <td th:text="${#dates.format(u.updatedAt, 'yyyy-MM-dd HH:mm')}">2024-01-01</td>
+                    <td>
+                        <a th:href="@{'/users/' + ${u.id}}" class="btn btn-outline-primary btn-action" title="Edit">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <button class="btn btn-outline-danger btn-action" title="Delete"
+                                th:onclick="'deleteUser(\''+@{/users/}+'\','+${u.id}+')'"><i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <!-- Pagination -->
+        <nav class="d-flex justify-content-end mt-3" th:if="${totalPages > 0}">
+            <ul class="pagination pd-1">
+                <!-- 1..N -->
+                <li class="page-item" style="margin:5px"
+                    th:each="i : ${#numbers.sequence(1, totalPages)}"
+                    th:classappend="${i} == ${page} ? 'active'">
+                    <a class="page-link"
+                       th:text="${i}"
+                       th:href="@{|/users?page=${i}|}">1</a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </div>
+</main>
+<div th:replace="~{base :: footer}"></div><!-- Modal xác nhận xóa -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1056">
+    <div id="deleteToast" class="toast custom-toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body fw-semibold" id="toastMsg">
+                Delete Success!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

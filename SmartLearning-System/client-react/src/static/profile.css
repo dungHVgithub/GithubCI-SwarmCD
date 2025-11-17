@@ -1,0 +1,151 @@
+/* modern-profile.css – Scoped styling to avoid conflicts */
+
+:root {
+    --header-h: 60px;
+    --sidebar-w: 300px;
+    --sidebar-w-collapsed: 80px;
+}
+
+/* Main profile container - keep original positioning logic */
+.profile-container {
+    margin-top: var(--header-h);
+    padding-top: 40px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: var(--sidebar-w);
+    min-height: calc(100vh - var(--header-h));
+    box-sizing: border-box;
+    transition: padding-left 0.2s ease;
+    background: linear-gradient(135deg, var(--profile-gray-50) 0%, #ffffff 100%);
+}
+
+.sidebar.collapsed~.profile-container {
+    padding-left: var(--sidebar-w-collapsed);
+}
+
+/* Profile page header */
+.profile-container>h2 {
+    color: var(--profile-gray-900);
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.profile-container>h2::after {
+    content: "Manage your account settings and preferences";
+    display: block;
+    color: var(--profile-gray-600);
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+/* Bố cục chung */
+.profile-form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    /* khoảng cách giữa các cột */
+}
+
+.profile-form .form-group {
+    flex: 1;
+    min-width: 250px;
+    /* tránh quá nhỏ trên màn hình nhỏ */
+}
+
+/* Hàng email + họ tên */
+.profile-form .row-line-1 {
+    display: flex;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+
+.profile-form .row-line-1 .form-group {
+    flex: 1;
+}
+
+/* Hàng role + mật khẩu */
+.profile-form .row-line-2 {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-form .row-line-2 .form-group {
+    flex: 1;
+}
+
+/* Hàng avatar + preview */
+.profile-form .row-line-3 {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.profile-form .row-line-3 .form-group {
+    flex: 1;
+}
+
+/* Ảnh preview avatar */
+.profile-form .avatar-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #2c3e50;
+}
+
+.modern-input {
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    transition: all 0.2s;
+}
+
+.modern-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+.avatar-preview {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modern-btn {
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+
+/* Responsive: trên màn nhỏ thì các cột sẽ xếp dọc */
+@media (max-width: 768px) {
+
+    .profile-form .row-line-1,
+    .profile-form .row-line-2,
+    .profile-form .row-line-3 {
+        flex-direction: column;
+    }
+}

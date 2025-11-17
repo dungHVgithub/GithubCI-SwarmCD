@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Admin Page</title>
+    <th:block th:replace="~{base :: bootstrap}"></th:block>
+    <link th:href="@{/css/home.css}" rel="stylesheet"/>
+    <script th:inline="javascript">
+        // Lấy dữ liệu tổng hợp từ Model (backend)
+        const totalTeacherWeek = [[${totalTeacherWeek}]];
+        const totalTeacherMonth = [[${totalTeacherMonth}]];
+        const totalStudentWeek = [[${totalStudentWeek}]];
+        const totalStudentMonth = [[${totalStudentMonth}]];
+
+    </script>
+    <script th:inline="javascript">
+const subjectLabelsWeek = [
+/*[# th:each="stat : ${subjectStatsWeek}"]*/[[${stat.subjectName}]],/*[/]*/
+];
+const subjectDataWeek = [
+  /*[# th:each="stat : ${subjectStatsWeek}"]*/[[${stat.totalCount}]],/*[/]*/
+];
+const subjectLabelsMonth = [
+/*[# th:each="stat : ${subjectStatsMonth}"]*/[[${stat.subjectName}]],/*[/]*/
+];
+const subjectDataMonth = [
+  /*[# th:each="stat : ${subjectStatsMonth}"]*/[[${stat.totalCount}]],/*[/]*/
+];
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script th:src="@{/js/home.js}"></script>
+</head>
+<body id="body-pd">
+
+<div th:replace="~{base :: header}"></div>
+<main th:fragment="content" style="padding-top: 15px;">
+    <div class="container-fluid mt-4">
+        <!-- 3 cards hàng trên -->
+        <div class="row g-4">
+            <!-- Card Subject -->
+            <div class="col-md-4">
+                <div class="card h-80 shadow-sm text-center border-0"
+                     style="background-image: linear-gradient(135deg, rgba(255,246,183,0.8) 0%, rgba(246,65,108,0.08) 100%);">
+                    <div class="card-body d-flex flex-column justify-content-center h-80">
+                        <img src="https://cdn-icons-png.flaticon.com/512/167/167755.png" alt="Subjects" width="56"
+                             class="mb-4 mx-auto">
+                        <h5 class="text-muted fs-4">Subjects</h5>
+                        <h3 class="fw-bold text-primary fs-2" th:text="${totalSubjects}">0</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Teacher -->
+            <div class="col-md-4">
+                <div class="card h-80 shadow-sm text-center border-0"
+                     style="background-image: linear-gradient(135deg, rgba(67,233,123,0.15) 0%, rgba(56,249,215,0.08) 100%);">
+                    <div class="card-body d-flex flex-column justify-content-center h-80">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" alt="Teachers" width="56"
+                             class="mb-4 mx-auto">
+                        <h5 class="text-muted fs-4">Teachers</h5>
+                        <h3 class="fw-bold text-primary fs-2" th:text="${totalTeachers}">0</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Student -->
+            <div class="col-md-4">
+                <div class="card h-80 shadow-sm text-center border-0"
+                     style="background-image: linear-gradient(135deg, rgba(248,87,166,0.15) 0%, rgba(255,88,88,0.08) 100%);">
+                    <div class="card-body d-flex flex-column justify-content-center h-80">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Students" width="56"
+                             class="mb-4 mx-auto">
+                        <h5 class="text-muted fs-4">Students</h5>
+                        <h3 class="fw-bold text-primary fs-2" th:text="${totalStudents}">0</h3>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end .row g-4 -->
+
+        <!-- 2 charts trên cùng một hàng -->
+        <div class="row mt-5 justify-content-center">
+            <!-- Biểu đồ tròn Students/Teachers -->
+            <div class="col-md-6 d-flex flex-column align-items-center">
+                <div class="d-flex align-items-center mb-3 gap-2">
+                    <h5 class="mb-0 fw-bold">Tỷ lệ Students/Teachers</h5>
+                    <select id="timeRangeSelect" class="form-select form-select-sm w-auto ms-3">
+                        <option value="week">Theo Tuần</option>
+                        <option value="month">Theo Tháng</option>
+                    </select>
+                </div>
+                <canvas id="studentTeacherChart" width="360" height="360"></canvas>
+            </div>
+            <!-- Biểu đồ cột môn học -->
+            <div class="col-md-6 d-flex flex-column align-items-center">
+                <div class="d-flex align-items-center mb-3 gap-2">
+                    <h5 class="mb-0 fw-bold">Số lượng các môn học</h5>
+                    <select id="subjectTimeRangeSelect" class="form-select form-select-sm w-auto ms-3">
+                        <option value="week">Theo Tuần</option>
+                        <option value="month">Theo Tháng</option>
+                    </select>
+                </div>
+                <canvas id="subjectBarChart" width="380" height="340"></canvas>
+            </div>
+        </div>
+    </div>
+</main>
+<div th:replace="~{base :: footer}"></div>
+</body>
+</html>

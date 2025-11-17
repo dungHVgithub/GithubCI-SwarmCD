@@ -1,0 +1,14 @@
+#studentTeacherChart {
+    max-width: 340px;
+    max-height: 340px;
+}
+@media (max-width: 900px) {
+    #studentTeacherChart {
+        max-width: 98vw;
+        max-height: 260px;
+    }
+}
+#subjectBarChart {
+    max-width: 680px;
+    max-height: 340px;
+}

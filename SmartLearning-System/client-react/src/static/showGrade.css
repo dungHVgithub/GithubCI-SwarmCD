@@ -1,0 +1,92 @@
+.grade-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grade-modal {
+    position: relative;
+    width: min(520px, 92vw);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    padding: 20px 20px 16px;
+}
+
+.grade-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.grade-close:hover {
+    opacity: 1;
+    border-color: #dedcdc;
+}
+
+.grade-header {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.grade-congrats {
+    margin: 6px 0 4px;
+}
+
+.grade-exercise-name {
+    color: #374151;
+}
+
+.grade-body {
+    margin: 16px 0;
+}
+
+.grade-loading,
+.grade-error {
+    text-align: center;
+    color: #13cb13;
+}
+
+.grade-score {
+    display: grid;
+    place-items: center;
+    gap: 8px;
+    margin: 10px 0 6px;
+}
+
+.grade-score-badge {
+    font-size: 42px;
+    font-weight: 800;
+    padding: 8px 22px;
+    border-radius: 12px;
+    color: #fff;
+    background: #61abd1;
+}
+
+.grade-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.grade-ok-btn {
+    min-width: 120px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #3bb854;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.grade-ok-btn:hover {
+    filter: brightness(1.05);
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (webjars hoặc CDN) -->
+    <link
+            th:href="@{/webjars/font-awesome/6.4.0/css/all.min.css}"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"/>
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/login.css}" rel="stylesheet"/>
+</head>
+<body>
+<!-- Animated background particles -->
+<div class="bg-particles">
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 0.5s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 2.5s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 3.5s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 4s;"></div>
+</div>
+
+<div id="loginOverlay" class="modal-overlay">
+    <div class="login-popup">
+        <div class="logo-section">
+            <div class="logo-circle">
+                <!-- Thay đổi đường dẫn theo tên file logo của bạn -->
+                <img th:src="@{/images/adminAvatar.png}"
+                     alt="Logo"
+                     class="logo-image">
+                <!-- Fallback icon nếu không load được ảnh -->
+                <i class="fas fa-user-lock fallback-icon"></i>
+            </div>
+            <h4>Welcome Back</h4>
+            <p class="subtitle">Please sign in to your account</p>
+        </div>
+        <!-- Chỉ render block này khi login trả về ?error -->
+        <div th:if="${param.error}" class="alert alert-danger d-flex align-items-center mt-3">
+            <i class="fas fa-exclamation-circle me-2"></i>
+            <span th:text="
+      ${#strings.contains(
+          session['SPRING_SECURITY_LAST_EXCEPTION']?.message,
+          'Bad credentials'
+       )
+        ? 'Incorrect email or password'
+        : session['SPRING_SECURITY_LAST_EXCEPTION']?.message
+      }">
+    Incorrect email or password
+  </span>
+        </div>
+        <!-- Thông báo không phải admin -->
+        <div th:if="${param.not_admin}" class="alert alert-danger d-flex align-items-center mt-3">
+            <i class="fas fa-exclamation-circle me-2"></i>
+            <span>You aren't Admin</span>
+        </div>
+        <form th:action="@{/login}" method="post">
+            <div class="form-floating">
+                <input
+                        type="email"
+                        id="email"
+                        name="username"
+                        class="form-control"
+                        placeholder="Email address of Admin"
+                        required/>
+                <label for="email"></label>
+                <i class="fas fa-envelope input-icon"></i>
+            </div>
+
+            <div class="form-floating">
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Password"
+                        required/>
+                <label for="password"></label>
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+            <button type="submit" class="btn-login">
+                <i class="fas fa-sign-in-alt me-2"></i>
+                Sign In
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS bundle -->
+<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/login.js}"></script>
+
+</body>
+</html>

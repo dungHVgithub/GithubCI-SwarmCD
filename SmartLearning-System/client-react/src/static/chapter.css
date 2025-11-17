@@ -1,0 +1,267 @@
+.chapter-main {
+    padding: 32px;
+    min-height: 100vh;
+    margin-top: 70px;
+    background: #eef0f2;
+}
+
+/* ---------- Header ---------- */
+.chapter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    background: #daeef7;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30, 55, 110, 0.08);
+    padding: 36px 38px;
+    gap: 44px;
+}
+
+.chapter-header-left {
+    flex: 1;
+}
+
+.chapter-title {
+    margin: 0 0 0 50px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1454d4;
+}
+
+.chapter-desc {
+    margin: 16px 0 0 50px;
+    color: #444;
+    font-size: 1.12rem;
+    font-weight: 500;
+}
+
+.chapter-header-img {
+    min-width: 180px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chapter-header-img img {
+    width: 240px;
+    height: 220px;
+    margin-right: 80px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .12);
+}
+
+.chapter-section-title {
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 1.33rem;
+    color: #2e4157;
+}
+
+/* ---------- List ---------- */
+.chapter-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow: visible;
+    /* để phần progress bên ngoài vẫn hiển thị */
+}
+
+/* ---------- Card ---------- */
+.chapter-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 65%;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30, 55, 110, 0.08);
+    padding: 22px 32px 22px 24px;
+    transition: box-shadow .15s, border-color .18s;
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: visible;
+    /* cho phép cụm progress nằm ngoài */
+}
+
+.chapter-card:hover {
+    border-color: #4cc7fa;
+    box-shadow: 0 8px 32px rgba(30, 55, 110, 0.16);
+    background: #f8fcff;
+}
+
+.chapter-indexbox {
+    background: #f3fbff;
+    min-width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 21px;
+    color: #00b7ff;
+    margin-right: 28px;
+    border: 1.5px solid #c8ecfa;
+}
+
+.chapter-lesson-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: #37bc9b;
+    margin-top: 2px;
+    letter-spacing: .5px;
+}
+
+.chapter-info {
+    flex: 1;
+}
+
+.chapter-card-title {
+    font-size: 1.19rem;
+    font-weight: 600;
+    color: #2e4157;
+    margin-bottom: 4px;
+}
+
+.chapter-card-sumary {
+    color: #475569;
+}
+
+.chapter-empty {
+    color: #777;
+    font-style: italic;
+    padding: 10px 0 10px 4px;
+}
+
+/* ---------- Toolbar ---------- */
+.chapter-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0 12px 0;
+}
+
+.chapter-add-btn {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.chapter-add-btn:hover {
+    background: #f8fafc;
+}
+
+/* ---------- Actions (edit/delete) ---------- */
+.chapter-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.chapter-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.chapter-icon-btn:hover {
+    background: #7baee1;
+}
+
+.chapter-icon-btn.danger:hover {
+    background: #d65e5e;
+    border-color: #e05959;
+}
+
+/* ---------- Reload button (TRONG card) ---------- */
+.chapter-reload-btn {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
+
+/* ---------- Progress (NGOÀI card, bên phải) ---------- */
+.chapter-progress {
+    position: absolute;
+    top: 50%;
+    right: -280px;
+    /* đẩy ra ngoài, ngang hàng card */
+    transform: translateY(-50%);
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.progress-bar {
+    width: 180px;
+    height: 12px;
+    background: #e0e7ff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #37bc9b, #22c55e);
+    transition: width .3s ease-in-out;
+}
+
+.progress-text,
+.score-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .chapter-card {
+        width: 100%;
+    }
+
+    .chapter-progress {
+        position: static;
+        transform: none;
+        align-items: flex-end;
+        min-width: 150px;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .progress-bar {
+        width: 120px;
+        height: 10px;
+    }
+
+    .progress-text,
+    .score-text {
+        font-size: .95rem;
+        font-weight: 600;
+    }
+
+    .chapter-reload-btn {
+        position: static;
+        margin-left: auto;
+    }
+}
